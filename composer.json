@@ -1,0 +1,20 @@
+{
+  "name": "moon/container",
+  "require": {
+    "container-interop/container-interop": "^1.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.6"
+  },
+  "authors": [
+    {
+      "name": "Damiano Petrungaro",
+      "email": "damiano.petrungaro@qwentes.it"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Moon\\Container\\": "src/"
+    }
+  }
+}

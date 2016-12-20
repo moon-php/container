@@ -1,7 +1,7 @@
 # Moon - Container
 A very simple Container
 
-[ ![Codeship Status for damianopetrungaroteam/container](https://codeship.com/projects/7d59dcf0-7e7e-0134-6553-22f53c89765f/status?branch=master)](https://codeship.com/projects/181674)
+[![Code Climate](https://codeclimate.com/github/moon-php/container/badges/gpa.svg)](https://codeclimate.com/github/moon-php/container) [![Build Status](https://travis-ci.org/moon-php/container.svg?branch=master)](https://travis-ci.org/moon-php/container)
 
 ## Introduction
 

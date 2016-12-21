@@ -1,5 +1,5 @@
 {
-  "name": "moon/container",
+  "name": "moon-php/container",
   "require": {
     "container-interop/container-interop": "^1.1"
   },

@@ -7,18 +7,27 @@ use Moon\Container\Exception\NotFoundException;
 
 class ContainerTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * Test that integer is added to container
+     */
     public function testInteger()
     {
         $c = new Container(['integer' => 1]);
         $this->assertEquals(1, $c->get('integer'));
     }
 
+    /**
+     * Test that string is added to container
+     */
     public function testString()
     {
         $c = new Container(['string' => 'This is a string']);
         $this->assertEquals('This is a string', $c->get('string'));
     }
 
+    /**
+     * Test that array is added to container
+     */
     public function testArray()
     {
         $c = new Container(['array' => ['one' => 1, 'string' => 'A string']]);
@@ -26,6 +35,9 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('string', $c->get('array'));
     }
 
+    /**
+     * Test that object is added to container
+     */
     public function testObjects()
     {
         $entries = [
@@ -38,6 +50,9 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf(\SplObjectStorage::class, $c->get('SplObjectStorageInstance'));
     }
 
+    /**
+     * Test that closure is added to container
+     */
     public function testClosure()
     {
         $entries = [
@@ -53,6 +68,9 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('example', $closure('example'));
     }
 
+    /**
+     * Test that a dependency is reachable into the container
+     */
     public function testDepends()
     {
         $entries = [];
@@ -67,18 +85,27 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(20, $c->get('multiply'));
     }
 
-    public function testHasAssertTrue()
+    /**
+     * Test that has entry
+     */
+    public function testHasEntry()
     {
         $c = new Container(['entry' => true]);
         $this->assertTrue($c->has('entry'));
     }
 
-    public function testHasAssertFalse()
+    /**
+     * Test that has not an entry
+     */
+    public function testHasNotEntry()
     {
         $c = new Container();
         $this->assertFalse($c->has('not-existing-key'));
     }
 
+    /**
+     * Expect a not found exception
+     */
     public function testNotFoundException()
     {
         $this->expectException(NotFoundException::class);

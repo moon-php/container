@@ -95,6 +95,20 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test that is always returned the same object
+     */
+    public function testReturnAlwaysSameInstances()
+    {
+        $entries = [
+            'instance' => function () {
+                return new \SplObjectStorage();
+            }
+        ];
+        $c = new Container($entries);
+        $this->assertTrue($c->get('instance') === $c->get('instance'));
+    }
+
+    /**
      * Test that has not an entry
      */
     public function testHasNotEntry()

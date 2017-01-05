@@ -8,7 +8,19 @@ use Moon\Container\Exception\NotFoundException;
 
 class Container implements ContainerInterface
 {
+    /**
+     * Contains all entries
+     *
+     * @var $container array
+     */
     private $container = [];
+
+    /**
+     * Contains all instantiated entries
+     *
+     * @var $instances array
+     */
+    private $instances = [];
 
     /**
      * Container constructor accept an array.
@@ -36,14 +48,19 @@ class Container implements ContainerInterface
      */
     public function get($alias)
     {
-        if (isset($this->container[$alias])) {
-            if (is_callable($this->container[$alias])) {
-                return $this->container[$alias]($this);
-            }
+        if (!isset($this->container[$alias])) {
+            throw new NotFoundException("$alias doesn't exists in the container");
+        }
 
+        if (!is_callable($this->container[$alias])) {
             return $this->container[$alias];
         }
-        throw new NotFoundException("$alias doesn't exists in the container");
+
+        if (!isset($this->instances[$alias])) {
+            $this->instances[$alias] = $this->container[$alias]($this);
+        }
+
+        return $this->instances[$alias];
     }
 
     /**

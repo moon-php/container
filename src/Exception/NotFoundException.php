@@ -2,6 +2,8 @@
 
 namespace Moon\Container\Exception;
 
-class NotFoundException extends \InvalidArgumentException implements \Interop\Container\Exception\NotFoundException
+use Psr\Container\NotFoundExceptionInterface;
+
+class NotFoundException extends \InvalidArgumentException implements NotFoundExceptionInterface
 {
 }

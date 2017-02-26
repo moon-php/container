@@ -2,9 +2,9 @@
 
 namespace Moon\Container;
 
-use Interop\Container\ContainerInterface;
-use Interop\Container\Exception\ContainerException;
 use Moon\Container\Exception\NotFoundException;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\ContainerInterface;
 
 class Container implements ContainerInterface
 {
@@ -42,7 +42,7 @@ class Container implements ContainerInterface
      * @param string $alias Identifier of the entry to look for.
      *
      * @throws NotFoundException  No entry was found for this identifier.
-     * @throws ContainerException Error while retrieving the entry.
+     * @throws ContainerExceptionInterface Error while retrieving the entry.
      *
      * @return mixed Entry.
      */

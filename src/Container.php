@@ -37,14 +37,7 @@ class Container implements ContainerInterface
     }
 
     /**
-     * Finds an entry of the container by its identifier and returns it.
-     *
-     * @param string $alias Identifier of the entry to look for.
-     *
-     * @throws NotFoundException  No entry was found for this identifier.
-     * @throws ContainerExceptionInterface Error while retrieving the entry.
-     *
-     * @return mixed Entry.
+     * {@inheritdoc}
      */
     public function get($alias)
     {
@@ -64,12 +57,7 @@ class Container implements ContainerInterface
     }
 
     /**
-     * Returns true if the container can return an entry for the given identifier.
-     * Returns false otherwise.
-     *
-     * @param string $alias Identifier of the entry to look for.
-     *
-     * @return boolean
+     * {@inheritdoc}
      */
     public function has($alias): bool
     {

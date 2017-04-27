@@ -71,7 +71,7 @@ class Container implements ContainerInterface
      *
      * @return boolean
      */
-    public function has($alias)
+    public function has($alias): bool
     {
         if (!isset($this->container[$alias])) {
             return false;

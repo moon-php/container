@@ -4,8 +4,9 @@ namespace Moon\Container\Unit;
 
 use Moon\Container\Container;
 use Moon\Container\Exception\NotFoundException;
+use PHPUnit\Framework\TestCase;
 
-class ContainerTest extends \PHPUnit_Framework_TestCase
+class ContainerTest extends TestCase
 {
     /**
      * Test that integer is added to container

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Moon\Container;
 
 use Moon\Container\Exception\NotFoundException;

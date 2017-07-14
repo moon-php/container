@@ -1,51 +1,34 @@
 # Moon - Container
-A very simple Container
 
-[![Code Climate](https://codeclimate.com/github/moon-php/container/badges/gpa.svg)](https://codeclimate.com/github/moon-php/container) [![Build Status](https://travis-ci.org/moon-php/container.svg?branch=master)](https://travis-ci.org/moon-php/container)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/moon-php/container/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/moon-php/container/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/moon-php/container/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/moon-php/container/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/moon-php/container/badges/build.png?b=master)](https://scrutinizer-ci.com/g/moon-php/container/build-status/master)
 
-## Introduction
+###[Documentation](http://moon-php.com/docs/container/)
 
-Container is a standalone component incredibly easy.
-It's a container (yes, really) that implements only the container-interop interface (waiting the PSR-11) without other method.
+## Tests
 
-## Usage
-The container accept as  constructor argument, an associative array.
-The key (a.k.a alias) always has an entry.
+To execute the test suite, you'll need phpunit.
+_It's a dev-dependency of this package_
 
-#### Init Container
+```bash
+$ php vendon/bin/phpunit
+```
 
-    $entries = [
-        'alias' => function () {
-            return new App\Acme\Class();
-        }
-    ];
-    $container = new Container($entries);
-        
-The entry can be anything: an integer, a string, a closure or an instance.
+## Contributing
 
-#### Check if entry exists by alias
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-    $entries = [...];
-    $container = new Moon\Container($entries);
-    $container->has('alias'); // Return true or false
+## Learn More
 
-#### Getting an entry
+Learn more at these links:
 
-    $entries = [...];
-    $c = new Moon\Container($entries);
-    $container->get('alias'); // Return the instance or throw a Moon\Container\Exception\NotFoundException
-    
+- [Website](http://moon-php.com)
 
-#### Entry with container resolution
+## Security
 
-An entry may require an instance of the container for other entries.
-In this case, just use an argument in the function where the container instance will be bound.
- 
-         $entries = [];
-         $entries['ten'] = 10;
-         $entries['two'] = 2;
-         $entries['multiply'] = function ($c) {
-             return $c->get('ten') * $c->get('two');
-         };
-         $c = new Moon\Container($entries);
-         $c->get('multiply'); // Return 20
+If you discover security related issues, please email damianopetrungaro@gmail.com instead of using the issue tracker.
+
+## License
+
+The Moon Container is licensed under the MIT license. See [License File](LICENSE.md) for more information.

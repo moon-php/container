@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Moon\Container;
 
 use Moon\Container\Exception\NotFoundException;
-use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
 
 class Container implements ContainerInterface

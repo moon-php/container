@@ -4,7 +4,7 @@ The contribution guideline is derived from the SlimPHP contribution guideline
  
 ## Pull Requests
 
-1. Fork the Moon Autoloader repository
+1. Fork the Moon Container repository
 2. Create a new branch for each feature or improvement
 3. Send a pull request from each feature branch to the **develop** branch
 
@@ -19,6 +19,6 @@ All pull requests must adhere to the [PSR-2 standard](https://github.com/php-fig
 
 ## Unit Testing
 
-All pull requests must be accompanied by passing unit tests and complete code coverage. The Moon Autoloader uses phpunit for testing.
+All pull requests must be accompanied by passing unit tests and complete code coverage. The Moon Container uses phpunit for testing.
 
 [Learn about PHPUnit](https://github.com/sebastianbergmann/phpunit/)

@@ -1,4 +1,4 @@
-The Moon Autoloader code of conduct is derived from the Ruby code of conduct. Any violations of the code of conduct may be reported to Damiano Petrungaro (damianopetrungaro@gmail.com).
+The Moon Container code of conduct is derived from the Ruby code of conduct. Any violations of the code of conduct may be reported to Damiano Petrungaro (damianopetrungaro@gmail.com).
 
 - Participants will be tolerant of opposing views.
 

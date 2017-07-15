@@ -4,7 +4,9 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/moon-php/container/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/moon-php/container/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/moon-php/container/badges/build.png?b=master)](https://scrutinizer-ci.com/g/moon-php/container/build-status/master)
 
-### [Documentation](http://moon-php.com/docs/container/)
+## Official Documentation
+
+Documentation can be found on the [Moon website](http://www.moon-php.com/docs/container/).
 
 ## Tests
 
@@ -23,7 +25,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 Learn more at these links:
 
-- [Website](http://moon-php.com)
+- [Moon Website](http://www.moon-php.com)
 
 ## Security
 

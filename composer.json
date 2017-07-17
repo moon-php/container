@@ -1,6 +1,8 @@
 {
   "name": "moon-php/container",
   "description": "A very simple Container with support for PSR-11",
+  "license": "MIT",
+  "homepage": "https://www.moon-php.com/",
   "require": {
     "psr/container": "^1.0",
     "php": ">=7.1"

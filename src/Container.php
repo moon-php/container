@@ -10,16 +10,12 @@ use Psr\Container\ContainerInterface;
 class Container implements ContainerInterface
 {
     /**
-     * Contains all entries
-     *
-     * @var $container array
+     * Contains all entries.
      */
     private $container = [];
 
     /**
-     * Contains all instantiated entries
-     *
-     * @var $instances array
+     * Contains all instantiated entries.
      */
     private $instances = [];
 
@@ -27,26 +23,21 @@ class Container implements ContainerInterface
      * Container constructor accept an array.
      * It must be an associative array with a 'alias' key and a 'entry' value.
      * The value can be anything: an integer, a string, a closure or an instance.
-     *
-     * @param array $entries
      */
-    public function __construct($entries = [])
+    public function __construct(array $entries)
     {
         foreach ($entries as $alias => $entry) {
             $this->container[$alias] = $entry;
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function get($alias)
     {
         if (!isset($this->container[$alias])) {
             throw new NotFoundException("$alias doesn't exists in the container");
         }
 
-        if (!is_callable($this->container[$alias])) {
+        if (!\is_callable($this->container[$alias])) {
             return $this->container[$alias];
         }
 
@@ -57,9 +48,6 @@ class Container implements ContainerInterface
         return $this->instances[$alias];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function has($alias): bool
     {
         if (!isset($this->container[$alias])) {

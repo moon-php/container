@@ -1,0 +1,18 @@
+sudo: required
+
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - docker build -t moon/container .
+  - docker run --name container -itd -e "TRAVIS=$TRAVIS" -e "TRAVIS_JOB_ID=$TRAVIS_JOB_ID" moon/container bash
+
+
+script:
+  - docker exec container /bin/sh -c "php vendor/bin/php-cs-fixer fix --dry-run --diff  --config=.php_cs.dist"
+  - docker exec container /bin/sh -c "php vendor/bin/phpunit --coverage-clover clover.xml"
+
+after_success:
+  - docker exec container /bin/sh -c "php vendor/bin/php-coveralls -x clover.xml -o coveralls-upload.json"

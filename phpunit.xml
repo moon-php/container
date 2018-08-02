@@ -5,13 +5,11 @@
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
-         processIsolation="false"
          stopOnFailure="false"
-         syntaxCheck="false"
          bootstrap="./vendor/autoload.php">
     <testsuites>
         <testsuite name="Unit">
-            <directory suffix="Test.php">./tests/</directory>
+            <directory suffix="Test.php">./tests/Unit/</directory>
         </testsuite>
     </testsuites>
     <filter>
